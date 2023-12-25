@@ -1,2 +1,5 @@
 # Bionic
- Gaming Console Where YOU control the game.
+
+Next generation gaming console where you don't need a controller - you control the game with your hands!
+
+
