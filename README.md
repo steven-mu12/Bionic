@@ -2,6 +2,7 @@
 
 Next generation gaming console where you don't need a controller - you control the game with your hands!
 
+![bot](FIGMA_DESIGNS/main_interface/MAIN_SCREEN.png)
 
 ## **Features**
 
