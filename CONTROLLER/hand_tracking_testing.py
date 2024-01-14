@@ -10,7 +10,8 @@ cap = cv2.VideoCapture(0)
 hands = mphands.Hands()
 
 
-# -- necessary data storage
+# -- necessary data storage (per need)
+threshold = 0.3  # Adjust this threshold as needed
 
 
 # -- monitoring video
@@ -34,6 +35,7 @@ while True:
             # ---------------------
             # -- gesture recogition 
             # ---------------------
+            # - based on the intersection of different landmarks on the hand
             
             threshold = 0.059 # WHEN BUILDING MAIN, TAKE USER's HAND INTO CONSIDERATION (ask the user to move further/closer and hold touch until good - use ultrasonic sensor for this)
             index_touch = False
@@ -55,15 +57,19 @@ while True:
             # -- motion recogition 
             # ---------------------
             
-            
-            
-            
+            current_wrist_x = landmarks[0].x
+
+            if current_wrist_x > 0.5+threshold:
+                print("RIGHT MOVE")
+            elif current_wrist_x < 0.5-threshold:
+                print("LEFT MOVE")
+
+            previous_wrist_x = current_wrist_x
             
             # -----------------------------------------------------
             # -- coordinate recogition (for navigating with cursor)
             # -----------------------------------------------------
-            
-            
+            # - this is based on the coordinate of your wrist (res / 0-1 on width and height)
             
             
     
