@@ -10,7 +10,6 @@ from random import *
 from App import *
 
 
-
 # ==================
 # -- Main Program --
 # ==================

@@ -6,6 +6,7 @@ from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from pyqtspinner import *
 from time import *
 from random import *
+import threading
 
 
 # ==============
@@ -119,7 +120,7 @@ class App(QWidget):
         # game 1
         self.game_1 = QPushButton("", self) 
         self.game_1.setGeometry(35, 120, 135, 135) 
-        self.game_1.clicked.connect(lambda: self.showBigBoard("./resources/test_desc.png", "Rhythm Avenue", "Conquer the music, using your fingers.")) 
+        self.game_1.clicked.connect(lambda: self.showBigBoard("./resources/test_desc.png", "RhythmAvenue", "Conquer the music, using your fingers.")) 
         self.game_1.setStyleSheet("border-image: url(./resources/logo.png);")
         self.game_1.enterEvent = lambda event: self.game_1.setStyleSheet("border-image: url(./resources/logo.png); border: -35px solid yellow;")
         self.game_1.leaveEvent = lambda event: self.game_1.setStyleSheet("border-image: url(./resources/logo.png);")
@@ -169,10 +170,16 @@ class App(QWidget):
         palette = self.palette()
         palette.setBrush(self.backgroundRole(), QBrush(QPixmap(image_path)))
         self.setPalette(palette)
-        
+    
+    # -- runs the calibration sequence (seperate executable file)    
     def calibrationSequence(self):
         print("button pressed")
-        
+    
+    # -- runs the specific game (seperate executable file)    
+    def runGame(self, game_name):
+        print("button pressed" + game_name)
+    
+    
     def blank(self):
         return
     
@@ -203,6 +210,13 @@ class App(QWidget):
         self.big_board_desc.move( 20, 515 )
         self.big_board_desc.setVisible(True) 
         
+        # start button
+        self.start = QPushButton("Start", self)
+        self.start.setStyleSheet("QPushButton { font-size: 16px; } QPushButton:hover { background-color: lightgreen; }")
+        self.start.clicked.connect(lambda: self.runGame(title))
+        self.start.setGeometry(800, 480, 135, 50) 
+        self.start.show()
+        
         # # disable double click
         # sender_button = self.sender()
         # sender_button.setEnabled(False)
@@ -212,4 +226,3 @@ class App(QWidget):
     #     self.big_board_desc.clear()
     #     self.big_board_title.clear()
     #     self.image_label.clear()
-        
