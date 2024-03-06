@@ -1,6 +1,6 @@
 import cv2
 import mediapipe as mp
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
 from time import sleep
 
 
@@ -13,9 +13,9 @@ class HandCalibrator:
         self.hands = self.mphands.Hands()
         self.cap = cv2.VideoCapture(0)
 
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(14, GPIO.OUT)
-        GPIO.setup(15, GPIO.OUT)
+        # GPIO.setmode(GPIO.BCM)
+        # GPIO.setup(14, GPIO.OUT)
+        # GPIO.setup(15, GPIO.OUT)
         
     
     # -- height calibration method
@@ -23,17 +23,15 @@ class HandCalibrator:
         difference = 0.8 - y_coord
         time_to_move = abs(difference) / 0.05
         
-        if difference > 0:
-            GPIO.output(15, GPIO.HIGH)
-            GPIO.output(14, GPIO.LOW)
-        elif difference < 0:
-            GPIO.output(15, GPIO.LOW)
-            GPIO.output(14, GPIO.HIGH)
+        # if difference > 0:
+        #     GPIO.output(15, GPIO.HIGH)
+        #     GPIO.output(14, GPIO.LOW)
+        # elif difference < 0:
+        #     GPIO.output(15, GPIO.LOW)
+        #     GPIO.output(14, GPIO.HIGH)
         
-        sleep(time_to_move)
-        
-        GPIO.output(15, GPIO.LOW)
-        GPIO.output(14, GPIO.LOW)
+        # GPIO.output(15, GPIO.LOW)
+        # GPIO.output(14, GPIO.LOW)
 
 
     # -- run the main program
