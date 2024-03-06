@@ -10,7 +10,7 @@ Bionic features a sleek and 3D printed console, as well as a modern and intuitiv
 
 
 **Demo of Entire System**:
-
+https://www.youtube.com/watch?v=oK3g2OTcw6U
 
 ## **Features**
 
@@ -20,7 +20,6 @@ Bionic features a sleek and 3D printed console, as well as a modern and intuitiv
 3. Front / Back detection (used to simulate movement, throttle for example)
 4. Ring & Pinky Swing detection (when you swing the finger towards your palm, just two extra motions for more complex games)
 
-Demo of Controls:
 
 
 **Calibration System -** Different users have different hand sizes. Bionic introduces a new calibration system to account for all three dimensions to ensure proper detection
@@ -31,7 +30,6 @@ Demo of Controls:
 Demo of Calibration:
 Hardware: https://github.com/steven-mu12/Bionic/assets/62585035/fd7a91eb-d48e-4f77-a0e7-581e0e81072d
 Software: https://github.com/steven-mu12/Bionic/assets/62585035/c03cd9a6-84c4-46dd-a892-3b93ee2c5f92
-
 
 
 
