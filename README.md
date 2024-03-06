@@ -6,11 +6,11 @@ Next generation gaming console where you don't need a controller - you control t
 
 Bionic features a sleek and 3D printed console, as well as a modern and intuitive user interface.
 
-![image](cover.png)
-
-
 **Demo of Entire System**:
 https://www.youtube.com/watch?v=oK3g2OTcw6U
+
+![image](cover.png)
+
 
 ## **Features**
 
