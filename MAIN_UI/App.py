@@ -120,14 +120,15 @@ class App(QWidget):
         # game 1
         self.game_1 = QPushButton("", self) 
         self.game_1.setGeometry(35, 120, 135, 135) 
-        self.game_1.clicked.connect(lambda: self.showBigBoard("./resources/test_desc.png", "RhythmAvenue", "Conquer the music, using your fingers.")) 
-        self.game_1.setStyleSheet("border-image: url(./resources/logo.png);")
-        self.game_1.enterEvent = lambda event: self.game_1.setStyleSheet("border-image: url(./resources/logo.png); border: -35px solid yellow;")
-        self.game_1.leaveEvent = lambda event: self.game_1.setStyleSheet("border-image: url(./resources/logo.png);")
+        self.game_1.clicked.connect(lambda: self.showBigBoard("./resources/gdbanner.png", "Geometry Dash", "Jump and fly your way through danger in this rhythm-based action platformer!"))
+
+        self.game_1.setStyleSheet("border-image: url(./resources/gd.png);")
+        self.game_1.enterEvent = lambda event: self.game_1.setStyleSheet("border-image: url(./resources/gd.png); border: -35px solid yellow;")
+        self.game_1.leaveEvent = lambda event: self.game_1.setStyleSheet("border-image: url(./resources/gd.png);")
         self.game_1.show()
         
         self.game_1_label = QLabel(self)
-        self.game_1_label.setText( "Rhythm Avenue" ) 
+        self.game_1_label.setText( "Geometry Dash" ) 
         font.setPointSize(12)
         self.game_1_label.setFont(font)
         self.game_1_label.move( 59, 265 )
@@ -197,6 +198,7 @@ class App(QWidget):
         # show the title
         self.big_board_title = QLabel(self)
         self.big_board_title.setText( title ) 
+        self.big_board_title.setStyleSheet("color: white;")
         font.setPointSize(26)
         self.big_board_title.setFont(font)
         self.big_board_title.move( 20, 480 )
@@ -205,6 +207,7 @@ class App(QWidget):
         # show the description
         self.big_board_desc = QLabel(self)
         self.big_board_desc.setText( description ) 
+        self.big_board_desc.setStyleSheet("color: white;")
         font.setPointSize(12)
         self.big_board_desc.setFont(font)
         self.big_board_desc.move( 20, 515 )

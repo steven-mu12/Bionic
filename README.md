@@ -1,30 +1,59 @@
-# Bionic
+# Bionic Console
+
+![image](MAIN_UI/resources/logo.png)
 
 Next generation gaming console where you don't need a controller - you control the game with your hands!
 
-![bot](FIGMA_DESIGNS/main_interface/MAIN_SCREEN.png)
+Bionic features a sleek and 3D printed console, as well as a modern and intuitive user interface.
+
+![image](cover.png)
+
+
+**Demo of Entire System**:
+
 
 ## **Features**
 
-**Controller System** - Basically, we use handtracking to generate an accurate controller ouput based on what motion is detected
-1. Index + Thumb and Middle + Thumb touch detection
-2. Ring & Pinky Swing detection (when you swing the finger towards your palm)
-3. Left / Right Wave detection
-4. Front / Back Push detection
+**Controls** - Bionic ditches traditional controllers or mouse & keyboard controls for games, and makess use of hand tracking to determine the action that the user is performing. The actions that are currently supported are
+1. Index + Thumb and Middle + Thumb touch detection, used to simulate clicks
+2. Left / Right detection (used to simulate movement, steering for example)
+3. Front / Back detection (used to simulate movement, throttle for example)
+4. Ring & Pinky Swing detection (when you swing the finger towards your palm, just two extra motions for more complex games)
 
-**Calibration System -** When the user plays the game first of all, we need to calibrate the gloves based on lighting conditions. We also need to tell the user the distance they should be from the camera to play this.
+Demo of Controls:
 
-- Calibration system needs to keep data for the size of user’s hands when a distance away from the camera system (see hardware below)
-- threshold = 0.05 # WHEN BUILDING MAIN, TAKE USER's HAND INTO CONSIDERATION (ask the user to move further/closer and hold touch until good - use ultrasonic sensor for this)
-- During Calibration, we want the user to place the hand in front of the system. We need a robotic arm to extend / Drop the arm to position the hand in frame of webcam (hardware)
 
-**Game Library System** - Just a main page that the user can go and browse the game to play. You control this with the motion from the gloves.
+**Calibration System -** Different users have different hand sizes. Bionic introduces a new calibration system to account for all three dimensions to ensure proper detection
+1. Automatic threshold detection - based on how big the user's hands are, a system automatically zooms the camera in and out to adjust for the x
+2. Robotic arm system - used to move the camera up and down to adjust for y
+3. Built in calibration sequence - forces the user to place hand in the middle fo the frame to adjust for z, before adjusting the x/y by methods mentioned above. 
 
-**Actual Games Themselves**  - For later consideration. For now, we can do some sort of navigation game. But, it’s up to developers to create games based on the above controls.
+Demo of Calibration:
 
-**Hardware System**
-- Lighting system - 2 light bulbs powered by an AC source (need to play with rectifiers)
-- The system should act literally like a console, where the user is able to press a power button to power it up
-- Heating management - make sure to calculate the thermal / heat flow of the system (wtf bro)
-- During Calibration, we want the user to place the hand in front of the system. We need a robotic arm to extend / Drop the arm to position the hand in frame of webcam
-- Design - Make it look good
+
+**Game Library System** - UI specially designed to be a simple hub for all your games, taking the complexity out of steam or the playstation UI.
+
+Demo of UI:
+
+
+**Games** - Bionic pipes the controls above into various video games. For demo of this, please see the demo of system, where I play geometry dash with Bionic.
+
+
+
+## **Technical Details**
+
+**Controller**
+- Built with python using tensorflow and opencv
+- Custom trained on top of existing mediapipe model for better detection of the movement and more precise tap detection.
+
+**Game Control**
+- Done with pyautogui and autohotkey for control piping into different games
+
+**Calibration**
+- Built with OpenCV and the controller model for x/z axis
+- Hardware arm system written in C++. Hardware built with OnShape and 3d-printing
+- Actual product (casing) also built in OnShape, 3d printed
+
+**Main UI**
+- Built with python using PyQT5
+- Designs are done with figma
