@@ -29,7 +29,7 @@ Demo of Controls:
 3. Built in calibration sequence - forces the user to place hand in the middle fo the frame to adjust for z, before adjusting the x/y by methods mentioned above. 
 
 Demo of Calibration:
-Hardware: https://github.com/steven-mu12/Bionic/assets/62585035/fd7a91eb-d48e-4f77-a0e7-581e0e81072d
+Hardware: https://github.com/steven-mu12/Bionic/assets/62585035/fd7a91eb-d48e-4f77-a0e7-581e0e81072d "\n"
 Software: https://github.com/steven-mu12/Bionic/assets/62585035/c03cd9a6-84c4-46dd-a892-3b93ee2c5f92
 
 
