@@ -34,6 +34,7 @@ Demo of Calibration:
 **Game Library System** - UI specially designed to be a simple hub for all your games, taking the complexity out of steam or the playstation UI.
 
 Demo of UI:
+https://github.com/steven-mu12/Bionic/assets/62585035/5a8dd9e8-b021-49de-a902-95b199cdee6b
 
 
 **Games** - Bionic pipes the controls above into various video games. For demo of this, please see the demo of system, where I play geometry dash with Bionic.
